@@ -6,5 +6,5 @@ Il s'agit d'implémenter une version du jeu "inondation" (voir par exemple [ici]
 
 ## Membre du projet
 
-- NOM, prénom
+- EL GHAOUTI, Aymane
 - NOM, prénom 
