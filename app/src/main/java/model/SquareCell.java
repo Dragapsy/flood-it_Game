@@ -2,12 +2,29 @@ package model;
 
 import javafx.scene.paint.Color;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 public class SquareCell extends AbstractCell{
 
     List<Cell> neighbours;
+
+    public SquareCell(){
+        setColor(AbstractCell.DEFAULT_CELL_COLOR);
+        setNeighbours(null);
+
+    }
+    public SquareCell( Color color){
+        setColor(color);
+        setNeighbours(null);
+
+    }
+    public SquareCell(Color color,List<Cell>neighbours){
+        SquareCell Cell=new SquareCell(color);
+        setNeighbours( neighbours);
+    }
 
 
     /**
@@ -17,7 +34,7 @@ public class SquareCell extends AbstractCell{
      */
     @Override
     public List<Cell> getNeighbours() {
-        return null;
+        return neighbours;
     }
 
     /**
@@ -28,6 +45,17 @@ public class SquareCell extends AbstractCell{
      */
     @Override
     public void setNeighbours(List<Cell> cells) {
+        if (cells==null){
+            neighbours=new ArrayList<>();
+        }
+        else {
+
+            neighbours=new ArrayList<>();
+            for (Cell value:cells)
+            {
+                neighbours.add(value);
+            }
+        }
 
     }
 
