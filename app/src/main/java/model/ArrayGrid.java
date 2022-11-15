@@ -41,4 +41,13 @@ public class ArrayGrid implements Grid{
     public int getNumberOfColumns() {
         return 0;
     }
+
+    @Override
+    public void color(ColorGenerator colorGenerator) {
+        for (int i=0; i<this.numberOfRows;i++){
+            for(int j=0; j<this.numberOfColumns;j++){
+                colorGenerator.nextColor(cells[i][j]);
+            }
+        }
+    }
 }
