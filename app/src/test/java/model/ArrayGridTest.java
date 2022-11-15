@@ -11,9 +11,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class ArrayGridTest {
 
-    // TODO
-    //  uncomment
-/*
+
     private  ArrayGrid arrayGridThreeFour;
     private final ArrayGrid arrayGridTwoTwo = new ArrayGrid(2,2);
 
@@ -76,8 +74,8 @@ class ArrayGridTest {
         }
     }
 
-    @Test
-    void testIterator() {
+   //@Test
+   /* void testIterator() {
         Iterator<Cell> iterator = arrayGridTwoTwo.iterator();
         assertThat(iterator.hasNext()).isTrue();
         assertThat(iterator.next()).isEqualTo(arrayGridTwoTwo.getCell(0,0));

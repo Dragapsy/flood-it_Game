@@ -3,13 +3,13 @@ package model;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 public class SquareCell extends AbstractCell{
 
     List<Cell> neighbours;
+
 
     public SquareCell(){
         setColor(AbstractCell.DEFAULT_CELL_COLOR);

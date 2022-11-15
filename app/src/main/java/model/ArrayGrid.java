@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Iterator;
+
 public class ArrayGrid implements Grid{
 
     private Cell [][] cells;
@@ -50,4 +52,6 @@ public class ArrayGrid implements Grid{
             }
         }
     }
+
+
 }
