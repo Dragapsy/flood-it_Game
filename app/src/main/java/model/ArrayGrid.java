@@ -1,7 +1,10 @@
 package model;
 
+<<<<<<< HEAD
 import java.util.Iterator;
 
+=======
+>>>>>>> origin/main
 public class ArrayGrid implements Grid{
 
     private Cell [][] cells;
@@ -43,6 +46,7 @@ public class ArrayGrid implements Grid{
     public int getNumberOfColumns() {
         return 0;
     }
+<<<<<<< HEAD
 
     @Override
     public void color(ColorGenerator colorGenerator) {
@@ -54,4 +58,6 @@ public class ArrayGrid implements Grid{
     }
 
 
+=======
+>>>>>>> origin/main
 }
