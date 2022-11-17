@@ -24,6 +24,7 @@ public class UniformColorGenerator implements ColorGenerator{
 //        cell.setColor(randomColor);
 //        return randomColor;
         return this.color;
+
     }
    
 }
