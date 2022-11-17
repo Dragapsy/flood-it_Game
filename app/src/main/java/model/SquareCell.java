@@ -23,7 +23,7 @@ public class SquareCell extends AbstractCell{
     }
     public SquareCell(Color color,List<Cell>neighbours){
         SquareCell Cell=new SquareCell(color);
-        setNeighbours( neighbours);
+        setNeighbours(neighbours);
     }
 
 
