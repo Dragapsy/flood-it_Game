@@ -19,7 +19,10 @@ public class CellGridIterator implements Iterator<Cell> {
 
     @Override
     public boolean hasNext() {
-        return false;
+        if(rowIndex+1== cells.length){
+            return columnIndex<cells[rowIndex].length;
+        }
+        return rowIndex< cells.length;
     }
 
     @Override
