@@ -11,7 +11,7 @@ public class ComputerPlayer implements Player{
 
     public Color play(){
 
-        return  this.Strategy.play(startCell);
+        return  this.Strategy.play(StartCell);
     }
     @Override
     public boolean isHuman() {
