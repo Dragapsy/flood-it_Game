@@ -2,18 +2,18 @@ package model;
 
 import javafx.scene.paint.Color;
 
-import java.util.Random;
-
 public class UniformColorGenerator implements ColorGenerator{
 
     private Color color;
 
 
+    public UniformColorGenerator(Color color){
+        this.color = color;
+    }
     @Override
-   public Color nextColor(Cell cells) {
+    public Color nextColor(Cell cell) {
 
-        return this.color;
-
+        return  this.color;
     }
    
 }
