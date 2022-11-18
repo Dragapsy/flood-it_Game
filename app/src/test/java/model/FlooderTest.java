@@ -54,6 +54,20 @@ public class FlooderTest {
         Flooder.flood(gridThreeThree.getCell(2, 2), Color.INDIANRED);
         assertThat(gridThreeThree.getCell(2, 2).getColor()).isEqualTo(Color.INDIANRED);
     }
+    @Test
+    public void testColoredArea(){
+        assertThat(Flooder.coloredArea(gridThreeThree.getCell(0,0))).isEqualTo(9);
+
+        assertThat(Flooder.coloredArea(gridThreeThree.getCell(0,1))).isEqualTo(9);
+
+        assertThat(Flooder.coloredArea(gridThreeThree.getCell(1,2))).isEqualTo(9);
+
+        assertThat(Flooder.coloredArea(gridThreeThree.getCell(0,2))).isEqualTo(9);
+
+        assertThat(Flooder.coloredArea(gridThreeThree.getCell(2,0))).isEqualTo(9);
+
+        assertThat(Flooder.coloredArea(gridThreeThree.getCell(2,2))).isEqualTo(9);
+    }
 
 
 
