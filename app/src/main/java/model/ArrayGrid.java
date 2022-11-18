@@ -1,12 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
 public class ArrayGrid implements Grid{
 
-    private Cell [][] cells;
+    protected Cell [][] cells;
     private int numberOfRows;
     private int numberOfColumns;
 
@@ -72,14 +73,19 @@ public class ArrayGrid implements Grid{
 
     @Override
     public void color(ColorGenerator colorGenerator) {
-        for (int i=0; i<this.numberOfRows;i++){
-            for(int j=0; j<this.numberOfColumns;j++){
-                colorGenerator.nextColor(cells[i][j]);
-            }
+//        for(Cell []cell1D:cells){
+//            for(Cell cell:cell1D){
+//                cell.setColor(colorGenerator.nextColor(cell));
+//            }
+//        }
+        for(Cell cell:this){
+            cell.setColor(colorGenerator.nextColor(cell));
         }
     }
 
 
-=======
->>>>>>> origin/main
+    @Override
+    public Iterator<Cell> iterator() {
+        return new CellGridIterator(this);
+    }
 }
