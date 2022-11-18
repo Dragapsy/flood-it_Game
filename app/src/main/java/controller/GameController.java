@@ -7,15 +7,17 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import model.*;
 import view.MatrixPane;
+import model.UniformExceptOneGenerator;
+import model.CyclicColorGenerator;
 
 import java.util.List;
 import java.util.Random;
 
 public class GameController {
-    public static final Color COLOR_ONE   = Color.RED;
-    public static final Color COLOR_TWO   = Color.BLUE;
-    public static final Color COLOR_THREE = Color.YELLOW;
-    public static final Color COLOR_FOUR  = Color.GREEN;
+    public static final Color COLOR_ONE   = Color.ALICEBLUE;// Aymane
+    public static final Color COLOR_TWO   = Color.DODGERBLUE;// EL GHAOUTI
+    public static final Color COLOR_THREE = Color.LEMONCHIFFON; // lamine
+    public static final Color COLOR_FOUR  = Color.PALEVIOLETRED; // Zeghar
     private static final List<Color> availableColors = List.of(COLOR_ONE, COLOR_TWO, COLOR_THREE, COLOR_FOUR);
 
     public static final double PAUSE_MILLISECONDS = 400;
@@ -55,40 +57,34 @@ public class GameController {
 
 
     private void colorGrid(ColorGenerator colorGenerator){
-        // TODO
-        //  matrixPane.getGrid().color(colorGenerator);
+          matrixPane.getGrid().color(colorGenerator);
     }
 
 
     @FXML
     public void fillGridUniform() {
-        // TODO uncomment:
-        //  colorGrid(new UniformColorGenerator(COLOR_ONE));
+        colorGrid(new UniformColorGenerator(COLOR_ONE));
     }
 
     @FXML
     public void fillGridRandom() {
-        // TODO uncomment
-        //  colorGrid(new RandomColorGenerator(availableColors,random));
+        colorGrid(new RandomColorGenerator(availableColors,random));
     }
 
     @FXML
     public void fillGridDistinct() {
-        // TODO uncomment
-        //  fillGridUniform();
-        //  colorGrid(new DistinctColorGenerator(COLOR_ONE,List.of(COLOR_THREE, COLOR_FOUR)));
+          fillGridUniform();
+          colorGrid(new DistinctColorGenerator(List.of(COLOR_THREE, COLOR_FOUR),COLOR_ONE));
     }
 
     @FXML
     public void fillGridCycle() {
-        // TODO uncomment
-        //  colorGrid(new CyclingColorGenerator(availableColors));
+       colorGrid(new CyclicColorGenerator(availableColors));
     }
 
     @FXML
     public void fillGridUniformExceptOne() {
-        // TODO uncomment
-        //  colorGrid(new UniformExceptOneColorGenerator(COLOR_ONE,COLOR_TWO));
+        colorGrid(new UniformExceptOneGenerator(COLOR_ONE,COLOR_TWO));
     }
 
     private void playComputerTurn(){
