@@ -41,6 +41,6 @@ public interface Cell {
      * @return this {@link Cell}'s property
      */
     Property<Color> getColorProperty();
-
+    Iterator<Cell> iterator();
 
 }

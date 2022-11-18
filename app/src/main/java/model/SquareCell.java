@@ -52,5 +52,10 @@ public class SquareCell extends AbstractCell{
 
     }
 
+    @Override
+    public Iterator<Cell> iterator() {
+        return new ColoredCellIterator(SquareCell.this);
+    }
+
 
 }
