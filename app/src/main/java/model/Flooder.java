@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 
 public class Flooder {
 
-    static void flood(Cell startCell, Color floodingColor){
+    public static void flood(Cell startCell, Color floodingColor){
         ColoredCellIterator myCell = new ColoredCellIterator(startCell);
 
         while (myCell.hasNext()) {
@@ -12,7 +12,7 @@ public class Flooder {
         }
     }
 
-    static int coloredArea(Cell startCell){
+    public static int coloredArea(Cell startCell){
         ColoredCellIterator cell = new ColoredCellIterator(startCell);
 
         int numberOfCellColored = 0;
