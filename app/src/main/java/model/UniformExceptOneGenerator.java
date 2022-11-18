@@ -6,6 +6,9 @@ public class UniformExceptOneGenerator implements ColorGenerator{
     private Color uniColor;
     private Color excepColor;
 
+    private int counter=0;
+
+
 
     public UniformExceptOneGenerator(Color uniformColor, Color exceptionColor){
         this.uniColor=uniformColor;
@@ -13,6 +16,9 @@ public class UniformExceptOneGenerator implements ColorGenerator{
     }
     @Override
     public Color nextColor(Cell cell) {
-        return null;
-    }
+        counter++;
+        if(counter==2){
+            return this.uniColor;
+        }
+        return this.excepColor;    }
 }
