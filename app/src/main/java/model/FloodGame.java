@@ -48,19 +48,10 @@ public class FloodGame {
     }
 
 
-    public int getPlayerScore(Player player) {
-        // TODO
-        return 0;
-    }
+    public int getPlayerScore(Player player) {return Flooder.coloredArea(player.getStartCell());}
 
-    public boolean hasWon(Player player){
-        // TODO
-        return false;
-    }
+    public boolean hasWon(Player player){return this.getPlayerScore(player)==totalFloodingArea;}
 
-    public boolean hasEnded(){
-        // TODO
-        return false;
-    }
+    public boolean hasEnded(){return this.hasWon(player);}
 
 }
