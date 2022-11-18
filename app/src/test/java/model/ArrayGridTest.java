@@ -66,8 +66,8 @@ class ArrayGridTest {
         }
     }
 
-   //@Test
-   /* void testIterator() {
+   @Test
+   void testIterator() {
         Iterator<Cell> iterator = arrayGridTwoTwo.iterator();
         assertThat(iterator.hasNext()).isTrue();
         assertThat(iterator.next()).isEqualTo(arrayGridTwoTwo.getCell(0,0));
@@ -79,5 +79,5 @@ class ArrayGridTest {
         assertThat(iterator.hasNext()).isFalse();
 
     }
- */
+
 }
