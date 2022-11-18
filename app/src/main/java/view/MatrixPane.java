@@ -24,7 +24,7 @@ public class MatrixPane extends GridPane {
     public MatrixPane(@NamedArg("tileWidth") Double tileWidth,
                       @NamedArg("tileHeight") Double tileHeight,
                       @NamedArg("numberOfColumns") Integer numberOfColumns,
-                      @NamedArg("numberOfRows") Integer numberOfRows) {
+                      @NamedArg("numberOfRows") Integer numberOfRows) throws Exception {
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;
         this.numberOfColumns = numberOfColumns;

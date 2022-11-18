@@ -1,10 +1,9 @@
 package model;
 
-<<<<<<< HEAD
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.List;
 
-=======
->>>>>>> origin/main
+
 public class ArrayGrid implements Grid{
 
     private Cell [][] cells;
@@ -12,41 +11,64 @@ public class ArrayGrid implements Grid{
     private int numberOfColumns;
 
 
-    public ArrayGrid(int numberOfRows,int numberOfColumns){
-        this.numberOfColumns=numberOfColumns;
-        this.numberOfRows=numberOfRows;
-        if(numberOfRows==0 | numberOfRows<0 | numberOfColumns==0 | numberOfRows<0 | numberOfColumns<0)  {
-            throw new IllegalArgumentException("numberOfRows or numberOfColumns can't be equal to zero or a negative value");
-        }
-        else {
-            this.cells=new Cell[numberOfRows][numberOfColumns];
-            Cell cell=new SquareCell();
-            for (int i=0; i<numberOfRows;i++){
-                for(int j=0; j<numberOfColumns;j++){
-                    cells[i][j]=cell;
+    public ArrayGrid(int numberOfRows, int numberOfColumns) throws Exception{
+            if(numberOfRows <= 0 || numberOfColumns <= 0){ throw new IllegalArgumentException("taille nulle ou négative");}
+            this.numberOfRows = numberOfRows;
+            this.numberOfColumns = numberOfColumns;
+            this.cells = new Cell[numberOfRows][numberOfColumns];
+            for (int i = 0; i < numberOfRows; i++){
+                for (int j = 0; j < numberOfColumns; j++){
+                    cells[i][j] = new SquareCell();
+                }
+            }
+
+            for (int i = 0; i < numberOfRows; i++) {
+                for (int j = 0; j < numberOfColumns; j++) {
+                    calculateNeighbours(i,j);
                 }
             }
 
         }
+    public void calculateNeighbours( int rowIndex, int columnIndex){
+        List<Cell> neighbours = new ArrayList<>();
+        if (rowIndex==0){ neighbours.add(getCell(rowIndex+1,columnIndex));}
+        else if (rowIndex<this.getNumberOfRows()-1) {
+            neighbours.add(getCell(rowIndex-1,columnIndex));
+            neighbours.add(getCell(rowIndex+1,columnIndex));
+        }
+
+        if (rowIndex==this.getNumberOfRows()-1){  neighbours.add(getCell(rowIndex-1,columnIndex)); }
+
+
+        if (columnIndex==0){ neighbours.add(getCell(rowIndex,columnIndex+1));}
+        else if (columnIndex<this.getNumberOfColumns()-1 ) {
+            neighbours.add(getCell(rowIndex,columnIndex-1));
+            neighbours.add(getCell(rowIndex,columnIndex+1));
+        }
+        if (columnIndex==this.getNumberOfColumns()-1){ neighbours.add(getCell(rowIndex,columnIndex-1));}
+
+
+        getCell(rowIndex,columnIndex).setNeighbours(neighbours);
+
     }
+
 
 
 
     @Override
     public Cell getCell(int row, int column) {
-        return null;
+        return this.cells[row][column];
     }
 
     @Override
     public int getNumberOfRows() {
-        return 0;
+        return this.numberOfRows;
     }
 
     @Override
     public int getNumberOfColumns() {
-        return 0;
+        return this.numberOfColumns;
     }
-<<<<<<< HEAD
 
     @Override
     public void color(ColorGenerator colorGenerator) {

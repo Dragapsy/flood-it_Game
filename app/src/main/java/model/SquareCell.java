@@ -13,12 +13,14 @@ public class SquareCell extends AbstractCell{
 
     public SquareCell(){
         setColor(AbstractCell.DEFAULT_CELL_COLOR);
-        setNeighbours(null);
+        this.neighbours= new ArrayList<Cell>();
+
 
     }
     public SquareCell( Color color){
         setColor(color);
-        setNeighbours(null);
+        this.neighbours= new ArrayList<Cell>();
+
 
     }
     public SquareCell(Color color,List<Cell>neighbours){
@@ -45,17 +47,8 @@ public class SquareCell extends AbstractCell{
      */
     @Override
     public void setNeighbours(List<Cell> cells) {
-        if (cells==null){
-            neighbours=new ArrayList<>();
-        }
-        else {
+        this.neighbours=cells;
 
-            neighbours=new ArrayList<>();
-            for (Cell value:cells)
-            {
-                neighbours.add(value);
-            }
-        }
 
     }
 

@@ -15,29 +15,21 @@ class ArrayGridTest {
     private  ArrayGrid arrayGridThreeFour;
     private final ArrayGrid arrayGridTwoTwo = new ArrayGrid(2,2);
 
+    ArrayGridTest() throws Exception {
+    }
+
     @BeforeEach
-    void initializeArrayGridThreeFour(){
+    void initializeArrayGridThreeFour() throws Exception {
         arrayGridThreeFour = new ArrayGrid(3,4);
     }
 
 
     @Test
     void testGetCellAndGridInitialization() {
-        assertThat(arrayGridThreeFour.getCell(0,0).getNeighbours())
-                .hasSize(2)
-                .containsExactlyInAnyOrder(arrayGridThreeFour.getCell(1,0), arrayGridThreeFour.getCell(0,1));
-        assertThat(arrayGridThreeFour.getCell(1,1).getNeighbours()).hasSize(4)
-                .containsExactlyInAnyOrder(arrayGridThreeFour.getCell(0,1),
-                        arrayGridThreeFour.getCell(2,1),
-                        arrayGridThreeFour.getCell(1,2),
-                        arrayGridThreeFour.getCell(1,0));
-        assertThat(arrayGridThreeFour.getCell(2,3).getNeighbours()).hasSize(2)
-                .containsExactlyInAnyOrder(arrayGridThreeFour.getCell(1,3),
-                        arrayGridThreeFour.getCell(2,2));
-        assertThat(arrayGridThreeFour.getCell(2,2).getNeighbours()).hasSize(3)
-                .containsExactlyInAnyOrder(arrayGridThreeFour.getCell(1,2),
-                        arrayGridThreeFour.getCell(2,1),
-                        arrayGridThreeFour.getCell(2,3));
+        assertThat(arrayGridThreeFour.getCell(0,0).getNeighbours()).hasSize(2).containsExactlyInAnyOrder(arrayGridThreeFour.getCell(1,0), arrayGridThreeFour.getCell(0,1));
+        assertThat(arrayGridThreeFour.getCell(1,1).getNeighbours()).hasSize(4).containsExactlyInAnyOrder(arrayGridThreeFour.getCell(0,1), arrayGridThreeFour.getCell(2,1),arrayGridThreeFour.getCell(1,2),arrayGridThreeFour.getCell(1,0));
+        assertThat(arrayGridThreeFour.getCell(2,3).getNeighbours()).hasSize(2).containsExactlyInAnyOrder(arrayGridThreeFour.getCell(1,3), arrayGridThreeFour.getCell(2,2));
+        assertThat(arrayGridThreeFour.getCell(2,2).getNeighbours()).hasSize(3).containsExactlyInAnyOrder(arrayGridThreeFour.getCell(1,2), arrayGridThreeFour.getCell(2,1), arrayGridThreeFour.getCell(2,3));
     }
 
     @Test
@@ -47,12 +39,12 @@ class ArrayGridTest {
 
     }
     @Test
-    void testGetNumberOfRows() {
+    void testGetNumberOfRows() throws Exception {
         assertThat(new ArrayGrid(100,200).getNumberOfRows()).isEqualTo(100);
     }
 
     @Test
-    void testGetNumberOfColumns() {
+    void testGetNumberOfColumns() throws Exception {
         assertThat(new ArrayGrid(100,200).getNumberOfColumns()).isEqualTo(200);
     }
 
