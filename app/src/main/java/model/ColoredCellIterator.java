@@ -25,7 +25,8 @@ public class ColoredCellIterator implements Iterator<Cell> {
 
     @Override
     public boolean hasNext() {
-        return false;
+        boolean expression=!(this.pendingCells.isEmpty());
+        return expression;    
     }
 
     @Override
