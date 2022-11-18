@@ -1,6 +1,7 @@
 package model;
 
 import javafx.scene.paint.Color;
+import util.SetUtil;
 
 import java.awt.*;
 import java.util.HashSet;
@@ -26,11 +27,18 @@ public class ColoredCellIterator implements Iterator<Cell> {
     @Override
     public boolean hasNext() {
         boolean expression=!(this.pendingCells.isEmpty());
-        return expression;    
+        return expression;
     }
 
     @Override
     public Cell next() {
-        return null;
-    }
+        Cell Cell = SetUtil.anyElement(this.pendingCells);
+        this.pendingCells.remove(Cell);
+        this.visitedCells.add(Cell);
+        for (Cell neighbour : Cell.getNeighbours()){
+            if (Cell.getColor() == neighbour.getColor() && !(this.visitedCells.contains(neighbour))){
+                this.pendingCells.add(neighbour);
+            }
+        }
+        return Cell;    }
 }
