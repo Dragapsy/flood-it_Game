@@ -1,6 +1,8 @@
 package model;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 public class CellGridIterator implements Iterator<Cell> {
 
     ArrayGrid arrayGrid;
@@ -10,6 +12,8 @@ public class CellGridIterator implements Iterator<Cell> {
     public CellGridIterator(ArrayGrid grid) {
         arrayGrid=grid;
         cells=grid.cells;
+        rowIndex =0;
+        columnIndex=0;
     }
 
 
@@ -20,6 +24,15 @@ public class CellGridIterator implements Iterator<Cell> {
 
     @Override
     public Cell next() {
-       return null;
+        if(columnIndex==cells[rowIndex].length)
+        {
+            columnIndex=0;
+            rowIndex++;
+        }
+        if(rowIndex== cells.length&& columnIndex==cells[rowIndex].length){
+            throw new NoSuchElementException();
+        }
+        return cells[rowIndex][columnIndex++];
     }
 }
+
