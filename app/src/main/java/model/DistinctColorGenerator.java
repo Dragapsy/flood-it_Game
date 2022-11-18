@@ -15,6 +15,18 @@ public class DistinctColorGenerator implements ColorGenerator {
     }
     @Override
     public Color nextColor(Cell cell) {
-        return null;
+        List<Cell> neighbours = cell.getNeighbours();
+        for (Color color : this.colors) {
+            boolean cellNotUsed = true;
+            for (Cell newCell : neighbours) {
+                if (color==cell.getColor())
+                { cellNotUsed = false; }
+            }
+            if (cellNotUsed == true) {
+                return color;
+            }
+        }
+        return this.defaultColor;
     }
 }
+
