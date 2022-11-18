@@ -1,5 +1,6 @@
 package util;
 
+import java.util.List;
 import java.util.Random;
 
 public class RandomUtil {
@@ -11,7 +12,11 @@ public class RandomUtil {
         return element;
     }
 
+    public static <T> T randomElement(List<T> elements, Random random){
+        T element= elements.get(random.nextInt(elements.size()));
+        return element;
 
+    }
 
 
 
