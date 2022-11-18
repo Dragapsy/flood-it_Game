@@ -12,6 +12,18 @@ public class Flooder {
         }
     }
 
+    static int coloredArea(Cell startCell){
+        ColoredCellIterator cell = new ColoredCellIterator(startCell);
+
+        int numberOfCellColored = 0;
+        while (cell.hasNext()) {
+            cell.next();
+            numberOfCellColored++;
+        }
+
+        return numberOfCellColored;
+    }
+
 
 
 
