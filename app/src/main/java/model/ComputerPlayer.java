@@ -3,13 +3,15 @@ package model;
 import javafx.scene.paint.Color;
 
 public class ComputerPlayer implements Player{
+    private Strategy Strategy;
+
     private String name;
     private Cell StartCell;
     private SquareCell cell;
 
     public Color play(){
 
-        return cell.getColor();
+        return  this.Strategy.play(startCell);
     }
     @Override
     public boolean isHuman() {
