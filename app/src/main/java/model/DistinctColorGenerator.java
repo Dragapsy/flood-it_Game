@@ -19,7 +19,7 @@ public class DistinctColorGenerator implements ColorGenerator {
         for (Color color : this.colors) {
             boolean cellNotUsed = true;
             for (Cell newCell : neighbours) {
-                if (color==cell.getColor())
+                if (color==newCell.getColor())
                 { cellNotUsed = false; }
             }
             if (cellNotUsed == true) {

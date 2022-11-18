@@ -18,7 +18,7 @@ public class UniformExceptOneGenerator implements ColorGenerator{
     public Color nextColor(Cell cell) {
         counter++;
         if(counter==2){
-            return this.uniColor;
+            return this.excepColor;
         }
-        return this.excepColor;    }
+        return this.uniColor;    }
 }
